@@ -34,12 +34,18 @@ let bestPosition;
 
 for (i = getMin; i <= getMax; i++) {
    const fuel = getFuelTotal(nums, i);
-    // if current fuel less than lowest fuel - assign lowest //
-   if (!lowestFuelUsed || fuel < lowestFuelUsed) {
+     // use ternary //
+    if (lowestFuelUsed ? fuel < lowestFuelUsed : fuel) {
       lowestFuelUsed = fuel
       // log position //
       bestPosition = i
-  }
+   }
+    // if current fuel less than lowest fuel - assign lowest //
+    //    if (!lowestFuelUsed || fuel < lowestFuelUsed) {
+    //       lowestFuelUsed = fuel
+    //       // log position //
+    //       bestPosition = i
+    //   }
 }
 
 console.log(lowestFuelUsed, bestPosition);
